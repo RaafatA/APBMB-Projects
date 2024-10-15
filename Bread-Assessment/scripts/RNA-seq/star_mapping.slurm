@@ -37,7 +37,7 @@ for sample in $(ls ${FASTQ_DIR}/*_1.fq.gz); do
     R2="${FASTQ_DIR}/${base}_2.fq.gz"    # Define the read 2 file
 
     # Run STAR for each pair of fastq files
-    /path/to/STAR --runThreadN ${THREADS} \
+    /home/ag003u1/.conda/envs/align-seq/bin/STAR --runThreadN ${THREADS} \
         --sjdbGTFfile ${GTF_FILE} \
         --readFilesCommand gunzip -c \
         --readFilesIn ${R1} ${R2} \
