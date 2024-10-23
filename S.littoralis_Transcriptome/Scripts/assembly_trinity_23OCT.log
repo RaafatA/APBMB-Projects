@@ -1,0 +1,1220 @@
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Rafat/Transcriptome/Sp.Litto$ cd /media/raafat/Dr.Manal/S_littoralis
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ls
+Abdomen_120327_preprocessed.fastq.gz        GCA_902850265.1_PGI_Spodlit_v1_genomic.fna.gz  GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf.gz  Reference
+data                                        GCA_902850265.1_PGI_Spodlit_v1_genomic.gff.gz  Head_120327_preprocessed.fastq.gz
+GCA_902850265.1_PGI_Spodlit_v1_genomic.fna  GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf     mapping-reads.sh
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ chmod +x mapping-reads.sh 
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ./mapping-reads.sh 
+	/home/raafat/miniconda3/envs/trinity-rna_seq/bin/STAR-avx2 --runThreadN 16 --sjdbGTFfile /media/raafat/Dr.Manal/S_littoralis/GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf --readFilesCommand gunzip -c --readFilesIn /media/raafat/Dr.Manal/S_littoralis/Abdomen_120327_preprocessed.fastq.gz --genomeSAindexNbases 15 --outSAMtype BAM SortedByCoordinate --genomeDir /media/raafat/Dr.Manal/S_littoralis/Reference --outFilterScoreMinOverLread 0.3 --outFilterMatchNminOverLread 0.3 --outFilterMismatchNmax 2 --outFileNamePrefix /media/raafat/Dr.Manal/S_littoralis/mapped_reads/mapped_Abdomen__
+	STAR version: 2.7.11b   compiled: 2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+Oct 23 14:05:30 ..... started STAR run
+Oct 23 14:05:30 ..... loading genome
+Oct 23 14:05:32 ..... processing annotations GTF
+Oct 23 14:05:32 ..... inserting junctions into the genome indices
+Oct 23 14:05:41 ..... started mapping
+Oct 23 14:07:59 ..... finished mapping
+Oct 23 14:08:00 ..... started sorting BAM
+Oct 23 14:08:47 ..... finished successfully
+	/home/raafat/miniconda3/envs/trinity-rna_seq/bin/STAR-avx2 --runThreadN 16 --sjdbGTFfile /media/raafat/Dr.Manal/S_littoralis/GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf --readFilesCommand gunzip -c --readFilesIn /media/raafat/Dr.Manal/S_littoralis/Head_120327_preprocessed.fastq.gz --genomeSAindexNbases 15 --outSAMtype BAM SortedByCoordinate --genomeDir /media/raafat/Dr.Manal/S_littoralis/Reference --outFilterScoreMinOverLread 0.3 --outFilterMatchNminOverLread 0.3 --outFilterMismatchNmax 2 --outFileNamePrefix /media/raafat/Dr.Manal/S_littoralis/mapped_reads/mapped_Head__
+	STAR version: 2.7.11b   compiled: 2024-07-03T14:39:20+0000 :/opt/conda/conda-bld/star_1720017372352/work/source
+Oct 23 14:08:48 ..... started STAR run
+Oct 23 14:08:48 ..... loading genome
+Oct 23 14:08:50 ..... processing annotations GTF
+Oct 23 14:08:51 ..... inserting junctions into the genome indices
+Oct 23 14:09:00 ..... started mapping
+Oct 23 14:11:42 ..... finished mapping
+Oct 23 14:11:42 ..... started sorting BAM
+Oct 23 14:13:04 ..... finished successfully
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ls
+Abdomen_120327_preprocessed.fastq.gz  GCA_902850265.1_PGI_Spodlit_v1_genomic.fna     GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf     mapped_reads
+assembly_guided.sh                    GCA_902850265.1_PGI_Spodlit_v1_genomic.fna.gz  GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf.gz  mapping-reads.sh
+data                                  GCA_902850265.1_PGI_Spodlit_v1_genomic.gff.gz  Head_120327_preprocessed.fastq.gz              Reference
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ chmod +x assembly_guided.sh 
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ./assembly_guided.sh
+./assembly_guided.sh: line 11: /home/ag003u1/.conda/envs/align-seq/bin/Trinity: No such file or directory
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ./assembly_guided.sh
+
+
+     ______  ____   ____  ____   ____  ______  __ __
+    |      ||    \ |    ||    \ |    ||      ||  |  |
+    |      ||  D  ) |  | |  _  | |  | |      ||  |  |
+    |_|  |_||    /  |  | |  |  | |  | |_|  |_||  ~  |
+      |  |  |    \  |  | |  |  | |  |   |  |  |___, |
+      |  |  |  .  \ |  | |  |  | |  |   |  |  |     |
+      |__|  |__|\_||____||__|__||____|  |__|  |____/
+
+    Trinity-v2.15.2
+
+
+
+Trinity version: Trinity-v2.15.2
+-currently using the latest production release of Trinity.
+
+Wednesday, October 23, 2024: 14:20:35	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/ensure_coord_sorted_sam.pl /media/raafat/Dr.Manal/S_littoralis/mapped_reads/combined_mapped.bam
+-appears to be a coordinate sorted bam file. ok.
+Wednesday, October 23, 2024: 14:20:36	CMD: java -Xmx64m -XX:ParallelGCThreads=2  -jar /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/ExitTester.jar 0
+Wednesday, October 23, 2024: 14:20:36	CMD: java -Xmx4g -XX:ParallelGCThreads=2  -jar /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/ExitTester.jar 1
+
+
+----------------------------------------------------------------------------------
+-------------- Trinity Phase 1: Clustering of RNA-Seq Reads  ---------------------
+----------------------------------------------------------------------------------
+
+-not finding a paired-end read in aligned bam file among first 1k reads, assuming single-end
+Wednesday, October 23, 2024: 14:20:36	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/trinity-plugins/bamsifter/bamsifter -c 200 -o /media/raafat/Dr.Manal/S_littoralis/trinity_output/combined_mapped.bam.norm_200.bam --keep_secondary /media/raafat/Dr.Manal/S_littoralis/mapped_reads/combined_mapped.bam
+Done with chr LR824532.2.
+Done with chr LR824533.2.
+Done with chr LR824534.2.
+Done with chr LR824535.2.
+Done with chr LR824536.2.
+Done with chr LR824537.2.
+Done with chr LR824538.2.
+Done with chr LR824539.2.
+Done with chr LR824540.2.
+Done with chr LR824541.2.
+Done with chr LR824542.2.
+Done with chr LR824543.2.
+Done with chr LR824544.2.
+Done with chr LR824545.2.
+Done with chr LR824546.2.
+Done with chr LR824547.2.
+Done with chr LR824548.2.
+Done with chr LR824549.2.
+Done with chr LR824550.2.
+Done with chr LR824551.2.
+Done with chr LR824552.2.
+Done with chr LR824553.2.
+Done with chr LR824554.2.
+Done with chr LR824555.2.
+Done with chr LR824556.2.
+Done with chr LR824557.2.
+Done with chr LR824558.2.
+Done with chr LR824559.2.
+Done with chr LR824560.2.
+Done with chr LR824561.2.
+Wednesday, October 23, 2024: 14:27:41	CMD: touch /media/raafat/Dr.Manal/S_littoralis/trinity_output/combined_mapped.bam.norm_200.bam.ok
+Wednesday, October 23, 2024: 14:27:41	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/prep_rnaseq_alignments_for_genome_assisted_assembly.pl --coord_sorted_SAM /media/raafat/Dr.Manal/S_littoralis/trinity_output/combined_mapped.bam.norm_200.bam -I 10000 --sort_buffer 50G --CPU 16 
+CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts//SAM_to_frag_coords.pl --CPU 16 --sort_buffer 50G --sam combined_mapped.bam.norm_200.bam --min_insert_size 1 --max_insert_size 10000 
+-extracting read coordinates from combined_mapped.bam.norm_200.bam into combined_mapped.bam.norm_200.bam.read_coords
+
+CMD: touch combined_mapped.bam.norm_200.bam.read_coords.ok
+CMD: /usr/bin/sort --parallel=16 -S50G -T . -k1,1 -k2,2 -k4,4n combined_mapped.bam.norm_200.bam.read_coords > combined_mapped.bam.norm_200.bam.read_coords.sort_by_readname
+CMD: cp /media/raafat/Dr.Manal/S_littoralis/trinity_output/combined_mapped.bam.norm_200.bam.read_coords /media/raafat/Dr.Manal/S_littoralis/trinity_output/combined_mapped.bam.norm_200.bam.read_coords.sort_by_readname
+CMD: /usr/bin/sort --parallel=16 -S50G -T . -k1,1 -k3,3n combined_mapped.bam.norm_200.bam.frag_coords > combined_mapped.bam.norm_200.bam.frag_coords.coord_sorted
+CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts//fragment_coverage_writer.pl combined_mapped.bam.norm_200.bam.frag_coords > combined_mapped.bam.norm_200.bam.frag_coverage.wig
+[25518000 lines read]  scaff:LR824562.2 lend:21453100  rend:21453370     CMD: touch combined_mapped.bam.norm_200.bam.frag_coverage.wig.ok
+CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts//define_coverage_partitions.pl combined_mapped.bam.norm_200.bam.frag_coverage.wig 1 + > combined_mapped.bam.norm_200.bam.minC1.gff
+CMD: touch combined_mapped.bam.norm_200.bam.minC1.gff.ok
+CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts//extract_reads_per_partition.pl --partitions_gff combined_mapped.bam.norm_200.bam.minC1.gff  --coord_sorted_SAM combined_mapped.bam.norm_200.bam --parts_per_directory 100 --min_reads_per_partition 10 
+// parsing paritions.
+[1071]  -writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/117_331.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/392_503.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/1368_1488.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/1698_1739.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/2102_2486.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/2524_14019253.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14019455_14019602.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14026854_14026954.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14035118_14035200.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14035740_14035856.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14035860_14035960.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14041080_14041184.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14042232_14042585.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14042639_14042739.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14042765_14043094.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14043728_14043882.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14045314_14045433.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824532.2/0/14054465_14054519.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/383_483.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/2842_2972.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/3475_3678.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/4672_4822.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/7189_7272.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/9088_9188.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/11010_11154.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/11948_12103.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/13074_13174.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/16167_16239.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/16745_16839.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17080_17180.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17383_17483.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17491_17591.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17616_17746.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17808_17908.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/18398_18498.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/18667_18819.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/18869_18969.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/19232_19422.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/19443_19549.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/27752_27852.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/31878_17236304.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17236315_17236628.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17236638_17236707.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17236865_17237004.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17237018_17237118.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17237460_17237586.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17238667_17238766.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17238840_17239004.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17239153_17239463.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17239471_17239541.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17239603_17239771.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17239984_17240130.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17240756_17240838.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17241453_17241553.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17241815_17241969.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17242385_17242693.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17242747_17243175.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17243835_17243989.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17244027_17244516.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17244620_17244731.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17244932_17245077.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17245103_17245172.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17246262_17246346.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17246420_17246545.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17248571_17248604.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17249002_17249102.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17254584_17254634.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17255561_17255660.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17259386_17259486.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17261485_17261586.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17261677_17261777.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17261961_17301036.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17301432_17301848.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17301878_17302243.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17302315_17302767.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17302904_17302990.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17302999_17303119.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17303291_17304279.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17304310_17304889.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17304898_17304998.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17305137_17305404.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17305458_17305742.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17305809_17305908.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17305947_17306203.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17306208_17306267.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17306311_17306652.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17306684_17306784.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17306841_17306941.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17307026_17307108.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17307114_17307481.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17307579_17307653.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17307706_17307929.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17307981_17308181.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17308229_17308356.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17308359_17308473.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17308475_17308523.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17308557_17308657.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17308682_17309788.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17309908_17310132.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17310317_17310388.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17310429_17310869.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17312368_17312467.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17316712_17316891.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17316959_17317075.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17317103_17317203.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17317271_17317569.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17317734_17317807.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17317836_17318051.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17318074_17318174.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17318179_17318357.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17318365_17318465.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17318473_17318651.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17318716_17319009.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17319098_17319198.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17319364_17319585.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17320176_17320338.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17320432_17320532.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/0/17321190_17321376.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17322188_17322288.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17322323_17322415.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17322468_17322568.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17323522_17323622.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17324802_17324902.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17324958_17325182.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325210_17325309.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325353_17325442.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325538_17325665.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325670_17325770.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325815_17325915.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17325952_17326103.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17326133_17326236.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17326450_17326550.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17327095_17327284.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17328452_17328552.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17328620_17328636.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824533.2/1/17329512_17329627.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/2485_16643496.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16643642_16643742.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16643887_16643987.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16644539_16644639.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16645838_16645936.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16646172_16646272.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16651390_16651491.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16651998_16658245.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16659269_16659378.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16661195_16661293.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16661467_16661567.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824534.2/0/16662101_16662201.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/2117_2235.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/2811_2881.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/3103_3197.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/3223_3300.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/6819_6918.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/7928_7982.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/10751_15982029.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15982864_15983008.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15983367_15983467.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15983908_15984008.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15985508_15985548.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15985723_15988057.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15988067_15989194.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15989365_15989379.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15990167_15990239.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15992340_15992440.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15992910_15993013.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15993644_15993785.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15993812_15993962.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15995218_15995288.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15995377_15995493.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15995545_15995686.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15995854_15995941.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/15996483_16002748.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/16010853_16010997.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/16013232_16013369.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/16023058_16023151.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/16023941_16024122.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824535.2/0/16025760_16025808.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/273_350.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/1976_2327.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/2553_2653.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/2770_4002.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/4024_4200.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/4203_4391.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/4463_5399.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/5451_5616.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/5621_6806.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/6821_7154.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/7159_7426.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/7453_7582.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/7589_7687.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/7813_7913.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/7954_8061.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/8245_8528.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/8571_8688.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/8695_8795.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/8823_8923.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/8942_9099.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/9122_9319.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/9402_9939.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/10058_10195.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/10280_10433.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/10464_10879.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/10892_10991.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/11011_11111.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/11169_11341.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/11428_11849.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/12175_13415.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/13589_14015.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/14155_14647.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/14651_15178.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/15205_15615.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/15831_15937.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/18488_18581.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/21298_16000128.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16000925_16001125.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16002073_16002254.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16002261_16002442.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16003182_16003361.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16007420_16009167.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16011054_16011154.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16013892_16013949.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16014453_16014525.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16014694_16014742.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16036307_16036407.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16036971_16037071.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824536.2/0/16037456_16037541.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/2689_2789.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/2829_3017.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/3069_3161.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/3290_3390.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/3462_3596.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/3720_3924.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/4057_4253.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/4654_4753.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/5022_5080.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/5567_5641.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/8817_8972.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/10910_15607206.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15607240_15607325.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15607436_15607515.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15607556_15607631.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15615285_15615361.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15615939_15616060.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15617243_15617333.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15617348_15617448.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15618264_15618390.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15619850_15619927.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15619953_15620196.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15620270_15620340.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15620402_15620530.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15620686_15620786.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15620917_15621035.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15622186_15622284.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15625532_15625664.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15625691_15625791.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15626157_15626237.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15626404_15706129.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15708061_15708143.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15708266_15714150.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15715746_15715846.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15715962_15717734.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15717738_15719360.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15719410_15720514.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15720518_15721209.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15721261_15721600.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15721643_15722303.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15722323_15722531.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15722557_15722661.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15722669_15723333.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824537.2/0/15723353_15723744.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/1569_1669.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/1842_1940.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/4571_4663.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/5542_5724.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/6850_6970.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/8065_8170.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/9042_9217.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/9375_9449.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/16152_16252.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/16502_16602.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/17557_17657.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/17710_17802.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/18747_18933.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/19591_19691.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/19785_20021.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/20099_20199.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/20541_20762.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/20771_20880.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/20932_21415.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/21480_21658.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/21666_21766.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/21774_21952.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/21957_22057.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/22080_22295.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/22324_22397.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/22492_23031.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/23059_23240.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/23267_23422.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/23436_23494.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/23505_23579.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/41784_42062.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/42106_42230.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/42568_42668.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/42821_42987.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43017_43306.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43351_43451.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43456_43583.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43679_43768.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43813_43912.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/43940_44321.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/47484_47570.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/48347_48436.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/49042_49142.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/49189_49289.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/50351_50451.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/51300_61970.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/62205_62309.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/62341_62409.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/62477_62551.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/62593_15776734.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15776881_15776979.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15777128_15777223.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15778171_15779864.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15781870_15782023.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15782048_15782693.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15782731_15782809.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15782923_15783229.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15784048_15784148.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15784935_15785013.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15788313_15788413.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15788637_15788715.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15791292_15791369.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15795221_15795370.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15797466_15797627.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15798829_15798929.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15800048_15800148.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15800428_15800527.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15800579_15800751.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15800776_15800876.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15800936_15801053.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15801295_15801469.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15802027_15802119.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15802352_15802452.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15802803_15802903.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15802948_15803103.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15803159_15803436.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15803486_15803582.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15803661_15803826.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15803887_15803987.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15803995_15804093.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15804516_15804616.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15804805_15805021.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15805247_15805326.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15805616_15805795.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15806305_15806384.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15807211_15807334.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824538.2/0/15808620_15808679.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/2584_2668.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/2965_3034.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/3509_8237.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/8709_9165.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/9276_9392.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/9482_9637.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/9651_9709.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/19863_19927.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/22292_22376.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/23368_23468.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/32891_32953.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/33504_33604.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/33754_33854.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/40508_15967888.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15967898_15968155.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15968195_15968241.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15969900_15969949.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15970072_15970184.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15970196_15970259.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15970407_15970456.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15970618_15970784.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15971010_15971123.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15971228_15971355.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15971823_15971942.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15971978_15972036.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15973773_15973873.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15977698_15977920.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15977922_15978022.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15978049_15978232.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15978237_15978638.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15978646_15979128.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15979157_15979317.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15979360_15979430.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15979465_15979667.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15979679_15979956.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15980077_15980646.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15980696_15980781.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15980788_15980882.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15980904_15981770.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15981823_15983307.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15983312_15983477.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15983483_15984501.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15984540_15984714.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15984727_15984903.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15984938_15984991.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15985107_15986114.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15986206_15986492.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15986557_15986768.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824539.2/0/15986780_15987179.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/1377_1451.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/3725_3847.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/7101_7261.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/11840_11940.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/13012_13090.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/16218_16318.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/17943_15422952.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15430896_15430996.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15431238_15431357.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15436644_15436783.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15437761_15437855.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15437984_15438149.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15439895_15439930.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15439987_15440018.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15440097_15440641.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15440733_15441047.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15441190_15441865.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15441912_15442849.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15446177_15446264.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15447654_15447754.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15451549_15451674.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15453104_15453238.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824540.2/0/15457647_15457723.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/566_628.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/638_35381.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/35946_15354709.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15354756_15354991.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15355015_15358547.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15358552_15358822.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15358826_15359510.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15360577_15360733.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15361911_15362011.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15362373_15362473.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824541.2/0/15362754_15362935.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/1608_5284632.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/5286175_5286232.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/5287968_5288040.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/5291501_5291539.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/5294791_5294866.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824542.2/0/5295093_15403036.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/2394_2541.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/2969_3025.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/3208_3247.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/3389_3472.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/4951_5094.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/5133_5882.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/5918_13055964.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13057693_13057793.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13059622_13059705.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13059860_13059960.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13060031_13060145.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13061207_13061307.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13062240_13062340.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13062521_13076074.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824543.2/0/13076681_13076754.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/2065_2164.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/9679_9728.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/10948_11067.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/12498_12652.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/13287_13616.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/13642_13742.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/13796_14149.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14841_5639048.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/5640145_14775748.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14775765_14775867.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14776265_14776282.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14777399_14777442.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14778086_14778142.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14781341_14781362.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14781914_14781959.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14782279_14782416.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14782445_14782545.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14782547_14782647.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14782923_14783028.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14783032_14783143.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14785996_14786096.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14786206_14786305.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14790913_14791044.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14792738_14792831.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14793128_14793217.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14793515_14793683.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14793692_14793780.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14793810_14794133.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14794159_14794236.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14794267_14794375.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14794398_14794602.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14794709_14794837.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14794986_14795185.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14795684_14795767.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14797118_14797217.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14797757_14797856.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14798207_14803322.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14803649_14803808.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14804133_14804202.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14808431_14808525.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14826744_14826844.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824544.2/0/14829434_14829514.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/2192_2264.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/4876_5018.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/5133_5247.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/5310_5422.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/5468_14987905.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14987910_14988307.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14988479_14988579.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14989094_14989216.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14989858_14989908.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14989973_14990113.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14991906_14992006.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14992391_14992476.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14993588_14993656.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14993722_14993779.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14995454_14995523.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14996279_14996328.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14997246_14997390.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/14999888_14999975.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15001469_15001588.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15003027_15003104.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15003360_15003449.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15003493_15003557.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15003644_15003738.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15003816_15003923.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15004096_15004375.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15004409_15004503.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15004696_15004813.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15004857_15005025.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15006588_15006706.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15006891_15007087.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15008492_15008592.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15009792_15009916.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15010021_15010054.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824545.2/0/15010195_15010211.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/3477_3656.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/4814_4935.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/5279_5379.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/5473_5605.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/5684_5930.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/6163_6318.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/6762_6862.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/6902_7090.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/7147_7239.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/7368_7468.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/7540_7674.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/7798_7986.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/8514_8669.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/8788_8888.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/8943_9149.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/12431_12530.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/12704_12802.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/16878_17053.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/17658_17758.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/17856_17964.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/19081_19236.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/19280_19500.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/19590_19690.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/19779_19879.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/19906_20011.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/20132_20167.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/20768_20867.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/21358_21431.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/21477_21540.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/21575_21675.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/21698_21798.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/21803_21872.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/22036_22066.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/22130_22272.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/23271_23341.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/24994_25094.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/25400_25547.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/25779_25835.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/26051_28766.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/28793_31278.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/31409_32267.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/32339_32521.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/32610_32725.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/32858_32958.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/32985_33085.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/33319_33570.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/33623_33723.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/34824_34925.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/35012_35177.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/35466_35521.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/35826_35970.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/37611_37658.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/38468_14694791.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14698971_14733334.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14733644_14734875.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14735011_14737021.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14737648_14737743.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14738903_14738966.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14739269_14739370.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14740129_14740229.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14741278_14741378.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14742141_14742241.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14745269_14745323.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14747575_14747773.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14747806_14747967.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14748467_14750810.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14751236_14751322.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14752201_14752230.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14753047_14753066.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14753522_14753582.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14755217_14755257.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14755401_14755501.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14756099_14765033.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14766106_14766218.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14766431_14766544.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14766986_14767014.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14767460_14767560.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14767887_14767987.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14775008_14775058.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14775651_14775750.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14775978_14776026.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14779968_14780051.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14780350_14780491.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14781393_14781423.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14781556_14781746.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14781955_14782240.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14782284_14782547.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14782586_14783182.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14783186_14783365.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14783378_14785568.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14785573_14785906.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14785921_14786759.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14786840_14787106.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14787111_14787276.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14787282_14788266.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14788337_14788525.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14788528_14788704.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14788726_14789958.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14790079_14790303.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/0/14790594_14790975.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14791409_14791488.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14791975_14792075.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14797839_14797939.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14798939_14799038.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14799053_14799170.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14799406_14799516.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14802277_14802323.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14804962_14805047.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14815663_14815768.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14815796_14821898.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14822236_14822285.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824546.2/1/14824541_14824634.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/50_150.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/185_313.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/544_615.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/847_1206.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/1348_1431.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/1491_1694.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/1795_1891.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/2474_2568.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/4561_4635.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/4650_4751.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/5322_5422.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/5647_5760.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/5848_5948.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/9085_9343.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/27542_27619.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/28868_28968.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/29086_29165.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/42066_42159.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/42891_42991.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/43507_43563.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/43693_43792.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/45018_45118.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/45366_45466.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/46558_46650.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/46685_46785.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/47599_47785.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/48442_48542.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/48636_48872.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/48952_49052.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/49394_49615.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/49624_49733.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/49881_50316.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/50532_50562.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/50617_50706.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/50799_13909695.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13910047_13910120.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13910134_13910222.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13910296_13910396.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13913309_13913390.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13914374_13914474.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13914492_13914554.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13916987_13917058.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13917175_13917251.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13917322_13917422.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13918946_13919062.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13919093_13919310.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13919485_13919628.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13922878_13923022.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13923306_13923406.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13926069_13926169.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13926452_13926637.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13926821_13927239.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13927242_13927378.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13927416_13928123.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13928266_13928383.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13928392_13928492.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13929430_13929513.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13929812_13929953.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13932046_13932100.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13932802_13932900.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13941594_13941688.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13946838_13946930.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13948301_13948433.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13950341_13950500.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13951763_13951863.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13952071_13966247.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824547.2/0/13967898_13968001.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/3172_3272.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/3401_3495.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/3863_3963.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/4128_4190.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/4741_4841.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/4888_4988.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/5629_5734.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/6027_6107.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/8700_14642322.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14642409_14642458.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14644124_14644207.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14644349_14644388.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14644580_14644727.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14654639_14654703.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14659542_14659577.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824548.2/0/14662475_14662524.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/2720_2801.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/2993_3032.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/3174_3257.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/5114_5661.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/5822_6017.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/6080_6111.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/6132_6563.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/6580_7364.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/7386_7548.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/7565_7720.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/7790_7966.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/7990_8806.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/8982_9736.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/9751_10167.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/10182_10515.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/10520_10862.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/10925_14425932.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14430853_14430968.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14432870_14432994.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14435675_14435775.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14444284_14444316.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14444879_14445035.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14446488_14446574.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14446967_14447088.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824549.2/0/14447902_14448001.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/918_1012.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/1554_1654.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/1660_1760.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/1814_1914.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/1976_2076.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/2566_2666.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/2836_2988.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/3038_3138.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/3400_3590.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/3611_3717.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/3799_14289801.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14290015_14290115.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14291501_14291602.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14291690_14291762.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14293446_14293502.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14293964_14294063.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14294070_14294149.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14294219_14294347.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14294423_14294522.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14297990_14298089.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14298289_14298389.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14298588_14298791.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14298851_14298934.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14301548_14301648.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14338955_14394177.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824550.2/0/14399516_14399588.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/4346_4395.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/4751_4851.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/5976_6111.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/6149_6297.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/6434_6551.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/7588_7688.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/7941_8110.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/8324_8413.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/8473_8744.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/8816_8998.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/9099_9238.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/9333_9457.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/9723_9810.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/9865_9919.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/10604_10854.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/10877_11171.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/11261_11462.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/11525_11800.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/11862_12032.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/14675_14774.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/16269_14155685.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/14165281_14165379.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/14169316_14169416.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824551.2/0/14176991_14177091.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/79_231.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/281_381.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/644_834.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/855_961.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/1145_1245.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/2361_2461.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/3609_3739.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/4246_4449.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/5444_5544.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/6353_6453.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/6619_6718.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/8021_8128.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/8373_8473.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/8561_8723.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/8885_9005.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/9058_9207.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/9248_9348.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/9448_9690.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/9963_10071.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/33756_33944.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/34194_34321.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/34417_34506.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/34551_34650.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/34678_34777.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/34902_35059.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/35632_35732.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/35986_36086.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/36094_36194.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/36449_36554.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/36761_36861.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/37973_13074083.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824552.2/0/13075291_13075344.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/1097_13267436.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13268058_13268162.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13268212_13268283.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13268432_13269039.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13269636_13269790.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13270170_13270286.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13270314_13270531.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13270706_13270826.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13272153_13272293.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13273865_13273965.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13274781_13274907.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13275304_13275431.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13277201_13277284.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13277583_13277724.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13282763_13282924.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13283006_13283106.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13283587_13283655.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13284017_13284117.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13284197_13284433.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13284527_13284627.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13285283_13285394.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13287633_13287733.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13290461_13290538.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13291640_13291739.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824553.2/0/13295992_13296069.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/4109_4208.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/4837_4893.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/5978_6078.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/6638_6707.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/9695_9795.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/28201_28285.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/34060_34079.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/38100_38234.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/40900_40952.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/57630_57712.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/77244_77432.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/77683_77761.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/77902_77991.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/78161_78385.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/80752_80849.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/87693_87793.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/88307_88362.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/89922_90005.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/96313_96413.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/104446_104602.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/105073_105181.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/105956_106088.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/106560_106669.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/109077_12377966.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/12378831_12378931.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/12379186_12379255.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/12379440_12379540.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/12380521_12380636.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824554.2/0/12380824_12380924.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/1996_2096.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/2447_2547.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/2592_2747.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/3065_3157.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/4130_12694803.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12695189_12695259.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12696780_12698152.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12698181_12699909.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12714072_12714172.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12714378_12714461.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12718087_12718117.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824555.2/0/12720650_12720750.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/4554_10420523.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10425086_10425131.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10426173_10426326.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10426351_10426449.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10426765_10426827.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10426829_10426879.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10426884_10426964.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10427236_10427396.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10428623_10428737.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10433772_10433873.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10434985_10435163.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10435257_10435357.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10435875_10436079.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10436263_10436363.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824556.2/0/10438232_10438332.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/138_334.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/406_506.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/736_896.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/1025_1089.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/2480_2580.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/3661_3761.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/3775_9456515.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9458954_9459054.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9459270_9459449.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9459494_9459593.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9459761_9459861.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9460690_9460849.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9469194_9469294.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9471519_9471617.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9471793_9471893.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824557.2/0/9472697_9472717.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/9771_9843.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/13158_13258.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/13423_13485.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/13671_13759.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/14036_14136.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/14564_14647.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/14922_15027.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/17756_9656137.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/9656161_9656244.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/9658647_9660964.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/9666275_9666333.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824558.2/0/9668921_9669021.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824559.2/0/3916_4001.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824559.2/0/4386_4486.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824559.2/0/7047_9170938.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824559.2/0/9171037_9171089.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824559.2/0/9177775_9177816.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/5409_5573.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/6170_6254.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/6288_6388.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/6505_6627.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/6649_6766.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/6979_9925199.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9925251_9926038.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9926044_9926157.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9926228_9926414.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9932591_9932678.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9932791_9932899.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9933028_9933133.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9933191_9933408.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9933621_9933721.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9933803_9933922.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9940861_9940964.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9941481_9941553.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824560.2/0/9947313_9947385.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/2525_2667.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/2782_2896.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/2959_3071.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/3136_3301.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/3384_3472.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/5562_5645.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/8800_13554.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/15227_15327.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/19570_19715.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/21918_22018.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/22585_22654.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/22862_23023.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/27676_27770.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/28425_28524.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/28579_28679.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/28741_28841.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/29331_29431.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/29602_29754.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/29804_29904.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/30168_30358.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/30379_30485.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/33131_33261.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/33768_33971.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/34967_35067.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/35314_35358.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/41367_41502.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/47943_48649.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/48765_48833.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/48867_48999.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/51488_51588.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/52217_52413.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/52456_52951.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/53206_53317.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/53420_53776.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/53825_53935.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/54145_54245.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/55020_55258.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/58283_58437.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/59271_59521.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/59575_59695.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/59739_59927.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/65443_65543.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/66071_66115.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/66245_66344.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/67316_67408.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/68282_68382.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/68922_69015.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/69043_69156.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/69361_69461.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/69794_69894.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/70478_70637.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/71081_71294.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/71386_71486.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/71884_71984.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/72070_72170.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/73356_73399.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/76645_76773.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/78606_78648.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/82163_82176.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/85012_85112.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/85360_85460.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/85583_85669.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/86615_86862.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/86868_87183.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/87198_87365.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/87378_87497.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/87540_87752.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/87849_87887.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/87915_87931.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/88246_88346.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/88953_89005.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/89560_89600.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/92556_92586.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/92978_93078.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/93099_10612395.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10612415_10613252.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10613260_10613314.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10613346_10613509.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10613855_10613887.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10614069_10614119.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10614858_10614910.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10615506_10615600.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10615930_10616123.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10616322_10616386.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10616545_10616618.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10616703_10616756.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10621708_10621802.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10623015_10623181.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10623275_10623364.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10623397_10623486.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10623607_10623908.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10624352_10624456.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10625387_10625487.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10626527_10626581.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10626625_10626734.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824561.2/0/10626742_10626842.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824562.2/0/1615_1687.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824562.2/0/4139_4213.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824562.2/0/5920_6070.trinity.reads
+-writing to Dir_combined_mapped.bam.norm_200.bam.minC1.gff/LR824562.2/0/6254_21487176.trinity.reads
+CMD: touch Dir_combined_mapped.bam.norm_200.bam.minC1.gff.ok
+##
+Done
+##
+
+Wednesday, October 23, 2024: 15:02:36	CMD: touch partitions.ok
+Wednesday, October 23, 2024: 15:02:36	CMD: find Dir_* -name '*reads' > read_files.list
+Wednesday, October 23, 2024: 15:02:36	CMD: touch read_files.list.ok
+Wednesday, October 23, 2024: 15:02:36	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/write_partitioned_trinity_cmds.pl --reads_list_file read_files.list --CPU 1 --max_memory 1G  --seqType fa --trinity_complete --full_cleanup  > trinity_GG.cmds
+Wednesday, October 23, 2024: 15:02:36	CMD: touch trinity_GG.cmds.ok
+Wednesday, October 23, 2024: 15:02:36	CMD: touch trinity_GG.cmds.ok
+
+
+--------------------------------------------------------------------------------
+------------ Trinity Phase 2: Assembling Clusters of Reads ---------------------
+------- (involving the Inchworm, Chrysalis, Butterfly trifecta ) ---------------
+--------------------------------------------------------------------------------
+
+Wednesday, October 23, 2024: 15:02:36	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/trinity-plugins/BIN/ParaFly -c trinity_GG.cmds -CPU 16 -v -shuffle 
+Number of Commands: 206
+succeeded(206)   100% completed.        
+
+All commands completed successfully. :-)
+
+Wednesday, October 23, 2024: 16:17:42	CMD: find Dir_*  -name '*inity.fasta'  | /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/GG_partitioned_trinity_aggregator.pl TRINITY_GG > /media/raafat/Dr.Manal/S_littoralis/trinity_output/Trinity-GG.fasta.tmp
+Wednesday, October 23, 2024: 16:17:42	CMD: /home/raafat/miniconda3/envs/trinity-rna_seq/opt/trinity-2.15.2/util/support_scripts/get_Trinity_gene_to_trans_map.pl /media/raafat/Dr.Manal/S_littoralis/trinity_output/Trinity-GG.fasta > /media/raafat/Dr.Manal/S_littoralis/trinity_output/Trinity-GG.fasta.gene_trans_map
+
+
+Finished. See /media/raafat/Dr.Manal/S_littoralis/trinity_output/Trinity-GG.fasta for reconstructed transcripts
+
+(trinity-rna_seq) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ script assembly_trinity.log
+Script started, output log file is 'assembly_trinity.log'.
+(base) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ ls
+Abdomen_120327_preprocessed.fastq.gz  data                                           GCA_902850265.1_PGI_Spodlit_v1_genomic.gff.gz  Head_120327_preprocessed.fastq.gz  Reference
+assembly_guided.sh                    GCA_902850265.1_PGI_Spodlit_v1_genomic.fna     GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf     mapped_reads                       trinity_output
+assembly_trinity.log                  GCA_902850265.1_PGI_Spodlit_v1_genomic.fna.gz  GCA_902850265.1_PGI_Spodlit_v1_genomic.gtf.gz  mapping-reads.sh
+(base) raafat@pop-os:/media/raafat/Dr.Manal/S_littoralis$ 
+exit
+Script done.
+
