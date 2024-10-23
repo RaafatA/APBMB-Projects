@@ -15,13 +15,14 @@ module load Anaconda3
 # Alternatively, activate your conda environment if STAR and samtools are installed there
 source /eb/software/Anaconda3/2021.05/bin/activate
 conda init 
+conda update -n base -c defaults conda
 conda activate align-seq
 conda install -c bioconda samtools
 
 # Define directories and parameters
 GENOME_DIR="/home/ag003u1/data/Reference"
 GTF_FILE="/home/ag003u1/data/GCF_018294505.1_IWGSC_CS_RefSeq_v2.1_genomic.gtf"
-FASTQ_DIR="/home/ag003u1/data/Transcriptome/"
+FASTQ_DIR="/home/ag003u1/data/Transcriptome/wheat_bread"
 OUTPUT_DIR="mapped_reads"
 THREADS=16
 MIN_OVERLAP=0.3
