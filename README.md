@@ -6,28 +6,24 @@ This repository contains various projects from the Applied Plant Breeding and Mi
 
 ### [Amplicon-Elhamra](https://github.com/RaafatA/APBMB-Projects/tree/main/Amplicon-Elhamra)
 Analysis pipeline for amplicon sequencing from environmental samples at Elhamra, focusing on microbial diversity and population structures.
-- [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/Amplicon-Elhamra/scripts)
-- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/Amplicon-Elhamra/results)
+- [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/Amplicon-Elhamra)
+- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/Amplicon-Elhamra/Results)
 
 ### [Bread-Assessment](https://github.com/RaafatA/APBMB-Projects/tree/main/Bread-Assessment)
 Study on bread wheat quality assessment, focusing on phenotypic and genotypic traits for improved breeding selection.
 - [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/Bread-Assessment/scripts)
-- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/Bread-Assessment/results)
+- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/Bread-Assessment/Results)
 
 ### [ElHamra-Shotgun](https://github.com/RaafatA/APBMB-Projects/tree/main/ElHamra-Shotgun)
 Shotgun metagenomic analysis of environmental samples from Elhamra, examining community structure and functional genomics.
-- [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/ElHamra-Shotgun/scripts)
-- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/ElHamra-Shotgun/results)
 
 ### [S.littoralis_Transcriptome](https://github.com/RaafatA/APBMB-Projects/tree/main/S.littoralis_Transcriptome)
 Transcriptome analysis for *Spodoptera littoralis*, with scripts for differential expression analysis and data processing.
-- [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/S.littoralis_Transcriptome/scripts)
-- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/S.littoralis_Transcriptome/results)
+
 
 ### [Sesame_GMO](https://github.com/RaafatA/APBMB-Projects/tree/main/Sesame_GMO)
 RNA-Seq project for GMO detection in sesame, including variant calling and transcriptomic data analysis.
-- [Scripts](https://github.com/RaafatA/APBMB-Projects/tree/main/Sesame_GMO/scripts)
-- [Results](https://github.com/RaafatA/APBMB-Projects/tree/main/Sesame_GMO/results)
+
 
 ## Languages Used
 - **R:** 66.9%
