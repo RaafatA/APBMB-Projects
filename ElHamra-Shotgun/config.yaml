@@ -1,0 +1,14 @@
+samples:
+  lake1_sample1:
+    r1: "raafat/ElHamra-shotgun/raw_data/AO_R1.fastq"
+    r2: "raafat/ElHamra-shotgun/raw_data/AO_R2.fastq"
+  lake1_sample2:
+    r1: "raafat/ElHamra-shotgun/raw_data/BO_R1.fastq"
+    r2: "raafat/ElHamra-shotgun/raw_data/BO_R2.fastq"
+  lake1_sample3:
+    r1: "raafat/ElHamra-shotgun/raw_data/CO_R1.fastq"
+    r2: "raafat/ElHamra-shotgun/raw_data/CO_R2.fastq"
+  # Add more samples here
+
+adapters: "Trimmomatic/adapters/TruSeq3-PE.fa"
+threads: 8
